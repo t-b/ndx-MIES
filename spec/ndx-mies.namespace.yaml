@@ -5,10 +5,8 @@ namespaces:
   - thomas.braun@byte-physics.de
   doc: An NWB:N extension for data and metadata from the Multichannel Igor Electrophysiology
     Suite (MIES)
-  name: ndx-MIES
+  name: ndx-mies
   schema:
   - namespace: core
-    neurodata_types:
-    - ElectricalSeries
-  - source: ndx-MIES.extensions.yaml
+  - source: ndx-mies.extensions.yaml
   version: 0.1.0

@@ -21,7 +21,7 @@ except Exception:
     readme = ""
 
 setup_args = {
-    'name': 'ndx-MIES',
+    'name': 'ndx-mies',
     'version': '0.1.0',
     'description': 'An NWB:N extension for data and metadata from the Multichannel Igor Electrophysiology Suite (MIES)',
     'long_description': readme,
@@ -31,13 +31,13 @@ setup_args = {
     'url': '',
     'license': 'BSD 3-Clause',
     'install_requires': [
-        'pynwb>=1.1.2'
+        'pynwb>=1.3.0'
     ],
     'packages': find_packages('src/pynwb'),
     'package_dir': {'': 'src/pynwb'},
     'package_data': {'ndx_mies': [
-        'spec/ndx-MIES.namespace.yaml',
-        'spec/ndx-MIES.extensions.yaml',
+        'spec/ndx-mies.namespace.yaml',
+        'spec/ndx-mies.extensions.yaml',
     ]},
     'classifiers': [
         "Intended Audience :: Developers",
@@ -48,8 +48,8 @@ setup_args = {
 
 
 def _copy_spec_files(project_dir):
-    ns_path = os.path.join(project_dir, 'spec', 'ndx-MIES.namespace.yaml')
-    ext_path = os.path.join(project_dir, 'spec', 'ndx-MIES.extensions.yaml')
+    ns_path = os.path.join(project_dir, 'spec', 'ndx-mies.namespace.yaml')
+    ext_path = os.path.join(project_dir, 'spec', 'ndx-mies.extensions.yaml')
 
     dst_dir = os.path.join(project_dir, 'src', 'pynwb', 'ndx_mies', 'spec')
     if not os.path.exists(dst_dir):
