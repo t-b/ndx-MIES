@@ -60,10 +60,10 @@ def main():
                                                                       neurodata_type_inc='StimulusSetReferencedWaveform',
                                                                       quantity='*')
                                                       ],
-                                             groups=[NWBGroupSpec(doc='Nested Folder',
-                                                                  neurodata_type_inc='StimulusSetReferencedFolder',
-                                                                  quantity='*')
-                                                    ],
+                                             # groups=[NWBGroupSpec(doc='Nested Folder',
+                                             #                      neurodata_type_inc='StimulusSetReferencedFolder',
+                                             #                      quantity='*')
+                                             #        ],
                                              )
 
     stimset_referenced = NWBGroupSpec(doc='Additional stimulus set waveform data is store here in tree structure.',
@@ -228,7 +228,8 @@ def main():
                                                          neurodata_type_inc='GeneratedBy')
                                          ],
                                 groups=[NWBGroupSpec(doc='Free form text notes from the experimenter',
-                                                     neurodata_type_inc='UserComment'),
+                                                     neurodata_type_inc='UserComment',
+                                                     quantity='?'),
                                         NWBGroupSpec(doc='Testpulse data',
                                                      neurodata_type_inc='Testpulse',
                                                      quantity='?'),
@@ -249,25 +250,25 @@ def main():
     )
 
     # include referenced types
-    ns_builder.include_type('Data', namespace='hdmf-common')
-    ns_builder.include_type('Container', namespace='hdmf-common')
-    ns_builder.include_type('DynamicTable', namespace='hdmf-common')
-    ns_builder.include_type('NWBData', namespace='core')
-    ns_builder.include_type('NWBDataInterface', namespace='core')
-    ns_builder.include_type('NWBFile', namespace='core')
-    ns_builder.include_type('NWBContainer', namespace='core')
-    ns_builder.include_type('LabMetaData', namespace='core')
-    ns_builder.include_type('Units', namespace='core')
-    ns_builder.include_type('ProcessingModule', namespace='core')
-    ns_builder.include_type('TimeSeries', namespace='core')
-    ns_builder.include_type('Subject', namespace='core')
-    ns_builder.include_type('Device', namespace='core')
-    ns_builder.include_type('SweepTable', namespace='core')
-    ns_builder.include_type('VectorData', namespace='core')
-    ns_builder.include_type('VectorIndex', namespace='core')
-    ns_builder.include_type('Index', namespace='core')
-    ns_builder.include_type('ElementIdentifiers', namespace='core')
-    ns_builder.include_type('IntracellularElectrode', namespace='core')
+    # ns_builder.include_type('Data', namespace='hdmf-common')
+    # ns_builder.include_type('Container', namespace='hdmf-common')
+    # ns_builder.include_type('DynamicTable', namespace='hdmf-common')
+    # ns_builder.include_type('NWBData', namespace='core')
+    # ns_builder.include_type('NWBDataInterface', namespace='core')
+    # ns_builder.include_type('NWBFile', namespace='core')
+    # ns_builder.include_type('NWBContainer', namespace='core')
+    # ns_builder.include_type('LabMetaData', namespace='core')
+    # ns_builder.include_type('Units', namespace='core')
+    # ns_builder.include_type('ProcessingModule', namespace='core')
+    # ns_builder.include_type('TimeSeries', namespace='core')
+    # ns_builder.include_type('Subject', namespace='core')
+    # ns_builder.include_type('Device', namespace='core')
+    # ns_builder.include_type('SweepTable', namespace='core')
+    # ns_builder.include_type('VectorData', namespace='core')
+    # ns_builder.include_type('VectorIndex', namespace='core')
+    # ns_builder.include_type('Index', namespace='core')
+    # ns_builder.include_type('ElementIdentifiers', namespace='core')
+    # ns_builder.include_type('IntracellularElectrode', namespace='core')
 
     # add all of your new data types to this list
     new_data_types=[user_comment, user_comment_device,
