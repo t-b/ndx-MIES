@@ -27,7 +27,7 @@ StimulusSetWavebuilderParameter = get_class('StimulusSetWavebuilderParameter', '
 StimulusSetWaveform = get_class('StimulusSetWaveform', 'ndx-mies')
 
 StimulusSetReferencedWaveform = get_class('StimulusSetReferencedWaveform', 'ndx-mies')
-StimulusSetReferencedFolder = get_class('StimulusSetReferencedFolder', 'ndx-mies')
+# StimulusSetReferencedFolder = get_class('StimulusSetReferencedFolder', 'ndx-mies')
 StimulusSetReferenced = get_class('StimulusSetReferenced', 'ndx-mies')
 StimulusSets = get_class('StimulusSets', 'ndx-mies')
 

@@ -163,10 +163,6 @@ groups:
       structure here. The stimulus set parameter referencing these waveforms has the
       path to these entries with colons (:) separated.
     quantity: '*'
-  groups:
-  - neurodata_type_inc: StimulusSetReferencedFolder
-    doc: Nested Folder
-    quantity: '*'
 - neurodata_type_def: LabNotebookDevice
   neurodata_type_inc: Device
   doc: Device for the labnotebooks

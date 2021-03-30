@@ -8,5 +8,26 @@ namespaces:
   name: ndx-mies
   schema:
   - namespace: core
+    neurodata_types:
+    - NWBData
+    - NWBDataInterface
+    - NWBFile
+    - NWBContainer
+    - LabMetaData
+    - Units
+    - ProcessingModule
+    - TimeSeries
+    - Subject
+    - Device
+    - SweepTable
+    - VectorData
+    - VectorIndex
+    - ElementIdentifiers
+    - IntracellularElectrode
+  - namespace: hdmf-common
+    neurodata_types:
+    - Data
+    - Container
+    - DynamicTable
   - source: ndx-mies.extensions.yaml
   version: 0.1.0
