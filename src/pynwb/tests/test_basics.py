@@ -17,8 +17,21 @@ def CreateMIESExtensionStructure(device):
     referencedWaveForm_0 = ndx_mies.StimulusSetReferencedWaveform("myCustomWave_0", data=np.empty([0]))
     stimulusSetFolder_0 = ndx_mies.StimulusSetReferencedFolder(name = "myCustomFolder_0", stimulus_set_referenced_waveforms = referencedWaveForm_0)
 
+    stimulusSet_1_WP = ndx_mies.StimulusSetWavebuilderParameter("setB_WP", data = np.empty([0, 100, 9]))
+    stimulusSet_1_WPT = ndx_mies.StimulusSetWavebuilderParameterText("setB_WPT", data = np.empty([0, 100, 9]))
+    stimulusSet_1_SegWvType = ndx_mies.StimulusSetWavebuilderSegmentTypes("setB_SegWvType", data = np.empty([102]))
+
+    stimulusSet_0_WP = ndx_mies.StimulusSetWavebuilderParameter("setA_WP", data = np.empty([0, 100, 9]))
+    stimulusSet_0_WPT = ndx_mies.StimulusSetWavebuilderParameterText("setA_WPT", data = np.empty([0, 100, 9]))
+    stimulusSet_0_SegWvType = ndx_mies.StimulusSetWavebuilderSegmentTypes("setA_SegWvType", data = np.empty([102]))
+
     stimulusSetReferenced = ndx_mies.StimulusSetReferenced(stimulus_set_referenced_folders = [stimulusSetFolder_0, stimulusSetFolder_1])
-    stimulusSets = ndx_mies.StimulusSets(name="myname", stimulus_set_referenced = stimulusSetReferenced, stimulus_set_waveforms = [stimset_waveform])
+    stimulusSets = ndx_mies.StimulusSets(name="myname",
+                                         stimulus_set_referenced = stimulusSetReferenced,
+                                         stimulus_set_waveforms = [stimset_waveform],
+                                         stimulus_set_wavebuilder_parameters = [stimulusSet_0_WP, stimulusSet_1_WP],
+                                         stimulus_set_wavebuilder_parameter_texts = [stimulusSet_0_WPT, stimulusSet_1_WPT],
+                                         stimulus_set_wavebuilder_segment_types = [stimulusSet_0_SegWvType, stimulusSet_1_SegWvType])
 
     labnotebookDevice = ndx_mies.LabNotebookDevice(device.name,
                                                    lab_notebook_numerical_values =
@@ -119,6 +132,7 @@ def test_basics():
        folder_0 = stimulus_set_referenced.stimulus_set_referenced_folders["myCustomFolder_0"]
        assert isinstance(folder_0, ndx_mies.StimulusSetReferencedFolder)
 
+        # TODO make it complete
        customWave_0 = folder_0["customWave_0"]
        assert isinstance(customWave_0, ndx_mies.StimulusSetReferencedWaveform)
 
@@ -127,5 +141,3 @@ def test_basics():
 
        customWave_1 = folder_1["customWave_1"]
        assert isinstance(customWave_1, ndx_mies.StimulusSetReferencedWaveform)
-
-       # TODO add stimulus set parameter types here and in CreateMIESExtensionStructure
