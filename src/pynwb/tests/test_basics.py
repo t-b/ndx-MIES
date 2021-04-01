@@ -113,8 +113,7 @@ def test_basics():
        stimulus_set_referenced = stimulus_sets.stimulus_set_referenced
        assert isinstance(stimulus_set_referenced, ndx_mies.StimulusSetReferenced)
 
-       # Custom wave
-
+       # Custom Wave
        assert len(stimulus_set_referenced.stimulus_set_referenced_folders) == 2
 
        folder_0 = stimulus_set_referenced.stimulus_set_referenced_folders["myCustomFolder_0"]
@@ -128,3 +127,5 @@ def test_basics():
 
        customWave_1 = folder_1["customWave_1"]
        assert isinstance(customWave_1, ndx_mies.StimulusSetReferencedWaveform)
+
+       # TODO add stimulus set parameter types here and in CreateMIESExtensionStructure
