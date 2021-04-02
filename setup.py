@@ -33,7 +33,7 @@ setup_args = {
     "long_description_content_type": readme_type,
     "author": "Thomas Braun",
     "author_email": "thomas.braun@byte-physics.de",
-    "url": "",
+    "url": "https://github.com/t-b/ndx-MIES",
     "license": "BSD 3-Clause",
     "install_requires": reqs,
     "packages": find_packages("src/pynwb"),
