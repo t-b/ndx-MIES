@@ -2,13 +2,13 @@ import os
 from pynwb import load_namespaces, get_class
 
 # Set path of the namespace.yaml file to the expected install location
-ndx_mies_specpath = os.path.join(os.path.dirname(__file__), "spec", "ndx-MIES.namespace.yaml")
+ndx_mies_specpath = os.path.join(os.path.dirname(__file__), "spec", "ndx-mies.namespace.yaml")
 
 # If the extension has not been installed yet but we are running directly from
 # the git repo
 if not os.path.exists(ndx_mies_specpath):
     ndx_mies_specpath = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "..", "..", "..", "spec", "ndx-MIES.namespace.yaml")
+        os.path.join(os.path.dirname(__file__), "..", "..", "..", "spec", "ndx-mies.namespace.yaml")
     )
 
 # Load the namespace
