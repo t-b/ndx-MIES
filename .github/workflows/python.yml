@@ -29,7 +29,9 @@ jobs:
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
     - name: Test with pytest
-      run: pytest tests -cov=ndx_mies --cov-report html:coverage --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
+      run: |
+        cd src/pynwb/tests
+        pytest . -cov=ndx_mies --cov-report html:coverage --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
     - name: Upload pytest test results
       uses: actions/upload-artifact@v2
       with:
