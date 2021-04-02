@@ -5,6 +5,11 @@ import os
 from setuptools import setup, find_packages
 from shutil import copy2
 
+with open("requirements.txt", "r") as fp:
+    # replace == with >= and remove trailing comments and spaces
+    reqs = [x.replace("==", ">=").split("#")[0].strip() for x in fp]
+    reqs = [x for x in reqs if x]  # remove empty strings
+
 # load README.md/README.rst file
 try:
     if os.path.exists("README.md"):
@@ -30,7 +35,7 @@ setup_args = {
     "author_email": "thomas.braun@byte-physics.de",
     "url": "",
     "license": "BSD 3-Clause",
-    "install_requires": ["pynwb>=1.3.0"],
+    "install_requires": reqs,
     "packages": find_packages("src/pynwb"),
     "package_dir": {"": "src/pynwb"},
     "package_data": {
